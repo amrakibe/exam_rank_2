@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 17:16:35 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/07 17:55:11 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/07 17:55:56 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void ft_strlen(char *str)
 
 int main(int ac, char **av)
 {
-    int i = 0;
+    int i = 0;  
     int len = ft_strlen;
     char tmp[256];
     if(ac == 2)
