@@ -6,42 +6,36 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 16:41:25 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/08 19:26:43 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/08 20:04:39 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
-#include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 int main(int ac, char **av)
 {
-    if(ac != 4)
+    int a1;
+    int a2;
+    char op;
+    int result = 0;
+    if(ac == 4)
     {
-        printf("\n");
+        a1 = atoi(av[1]);
+        a2 = atoi(av[3]);
+        op = av[2][0];
+        if(op == '+')
+            result = a1 + a2;
+        else if(op == '-')
+            result = a1 - a2;
+        else if(op == '*')
+            result = a1 * a2;
+        else if(op == '/')
+            result = a1 / a2;
+        else if(op == '%')
+            result = a1 % a2;
+        printf("%d", result);
     }
-    else if(ac == 4)
-    {
-        int b = atoi(av[3]);
-        int a = atoi(av[1]);
-        int res = 0;
-        
-        char op = av[2][0];
-        
-            if(op == '+')
-                res = a + b;
-            else if(op == '*')
-                res = a * b;
-            else if(op == '-')
-                res = a - b;
-            else if(op == '%')
-                res = a % b;
-            else if(op == '/')
-                res = a / b;
-                else
-            printf("%d\n",res);
-        }
-        else
-            write(1, "\n", 1);
-        return(0);
-    }
+    printf("\n");
+}
