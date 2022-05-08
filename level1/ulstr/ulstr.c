@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_and_replace.c                               :+:      :+:    :+:   */
+/*   ulstr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 15:10:45 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/08 15:31:30 by amrakibe         ###   ########.fr       */
+/*   Created: 2022/05/08 15:28:50 by amrakibe          #+#    #+#             */
+/*   Updated: 2022/05/08 16:07:49 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int main(int ac,char **av)
+int main(int ac, char **av)
 {
-    char first;
-    char last;
     int i = 0;
-    first = av[2][i];
-    last = av[3][i];
-    if(ac == 4)
+    if(ac == 2)
     {
-        while(av[1][i])
-        {
-            if(av[1][i] == first)
-            av[1][i] = last;
-            write(1, &av[1][i], 1);
-            i++;
-        }
+    while(av[1][i])
+    {
+        if(av[1][i] >= 'a' && av[1][i] <= 'z')
+        av[1][i] -= 32;
+        else if(av[1][i] >= 'A' && av[1][i] <= 'Z')
+        av[1][i] += 32;
+        write(1,&av[1][i++],1);
+    }
     }
     write(1, "\n", 1);
 }
