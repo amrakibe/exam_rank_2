@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:06:13 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/08 20:29:11 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/08 20:31:08 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,4 @@ int ft_atoi(const char *str){
     }
     
     return (result * sign);
-}
-
-int main()
-{
-    printf("%d\n", ft_atoi("	56"));
-    printf("%d", atoi("	56"));
-    return 0;
 }
