@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 17:21:37 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/09 17:42:30 by amrakibe         ###   ########.fr       */
+/*   Created: 2022/05/09 17:43:29 by amrakibe          #+#    #+#             */
+/*   Updated: 2022/05/09 22:30:37 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<string.h>
 #include<stdio.h>
 
-char *ft_strdup(char *src)
+int ft_strlen(char *str)
 {
-    int i , j;
-    char *buf;
-    
-    i = 0;
-    j = 0;
-    buf = malloc(sizeof(char *));
-    if(!buf)
-        return(NULL); 
-    while(src[i] != '\0')
-        buf[j++] = src[i++];
-    buf[j] = '\0';
-    return(buf);
+    int i = 0;
+    while(str[i])
+    i++;
+    return(i);
 }
-int main()
+
+char    *ft_strrev(char *str)
 {
-    printf("%s\n", ft_strdup("amrakibe"));
-    printf("%s\n", strdup("amrakibe"));
+    int  i = 0;
+    int len = ft_strlen(str);
+
+    while(i < len)
+    {
+        len--;
+        char tmp = str[i];
+        str[i] = str[len];
+        str[len] = tmp;
+        i++;
+    }
+    return(str);
+}
+int main() 
+{ 
+    char *str = "amine";
+    printf("%s\n", ft_strrev(str));
 }
