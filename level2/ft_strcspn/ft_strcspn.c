@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 21:29:04 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/08 21:58:00 by amrakibe         ###   ########.fr       */
+/*   Created: 2022/05/08 22:29:11 by amrakibe          #+#    #+#             */
+/*   Updated: 2022/05/09 16:52:21 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include<string.h>
 
-int    ft_strcmp(char *s1, char *s2)
+size_t	ft_strcspn(const char *s, const char *reject)
 {
-    int i = 0;
-    while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-        i++;
-    return(s1[i] - s2[i]);
+	int i;
+	int j;
+
+	i = 0;
+	while(s[i])
+	{
+		j = 0;
+		while(reject[j])
+		{
+			if(s[i] == reject[j])
+			return i;
+			j++;
+		}
+		i++;
+	}
+	while(s[i])
+	{
+		i++;
+	}
+	return(i);
 }
 int main()
 {
-    char *s1, *s2;
-    s1 = "k";
-    s2 = "s";
-    printf("%d\n", ft_strcmp(s1, s2));
-    printf("%d\n", strcmp(s1, s2));
-    
+	printf("%ld\n", ft_strcspn("amrakibe", "k"));
+	printf("%ld", strcspn("amrakibe", "k"));
+	
 }
