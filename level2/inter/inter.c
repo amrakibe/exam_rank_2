@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 22:34:08 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/10 18:04:40 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/10 20:32:04 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,20 @@ int chek_exist(char c, char *str)
 
 int main(int ac, char **av)
 {
-    char *str1 = av[1];
-    char *str2 = av[2];
-    char *str3;
-    int i;
-
-    i = 0;
-    while(str1[i])
+    if(ac == 3)
     {
-        if(chek_exist(str1[i], str2) && !chek_double(str1, i))
+        char *str1 = av[1];
+        char *str2 = av[2];
+
+        int i = 0;
+        while(str1[i])
         {
-            write(1 ,&str1[i], 1);
+            if(chek_exist(str1[i], str2) && !chek_double(str1, i))
+            {
+                write(1 ,&str1[i], 1);
+            }
+                i++;
         }
-        i++;
     }
+    write(1,"\n",1);
 }
