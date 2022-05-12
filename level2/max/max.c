@@ -6,26 +6,45 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:32 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/12 16:15:41 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:04:58 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-int		max(int* tab, unsigned int len)
-{
-    int i = -1;
-    int l;
+// int		max(int* tab, unsigned int len)
+// {
+//     int i = -1;
+//     int tmp;
 
-    while(i < l - 1)
+//     while(i < tmp - 1)
+//     {
+//         if(tab[i] < tab[i + 1])
+//         tmp = tab[i];
+//         tab[i] = tab[i + 1];
+//         tab[i + 1] = tmp;
+//         i = -1;
+//     }
+//     i++;
+//     return tab[0];
+// }
+
+int max(int *tab, unsigned int len)
+{
+    int max = 0;
+    int i = 0;
+    max = tab[0];
+    while (i < len)
     {
-        if(tab[i] < tab[i + 1])
-        l = tab[i];
-        tab[i] = tab[i + 1];
-        tab[i + 1] = l;
-        i = -1;
+        if (max <= tab[i])
+            max = tab[i];
+        i++;
     }
-    i++;
-    return 1;
+    return max;
 }
- 
+
+int main()
+{
+    int arr[4] = {12};
+    printf("%d", max(arr, 4));
+}
