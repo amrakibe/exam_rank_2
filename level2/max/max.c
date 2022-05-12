@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:32 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/12 16:14:54 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:15:41 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,4 @@ int		max(int* tab, unsigned int len)
     i++;
     return 1;
 }
+ 
