@@ -6,28 +6,11 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:32 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/12 18:05:32 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:05:50 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-
-// int		max(int* tab, unsigned int len)
-// {
-//     int i = -1;
-//     int tmp;
-
-//     while(i < tmp - 1)
-//     {
-//         if(tab[i] < tab[i + 1])
-//         tmp = tab[i];
-//         tab[i] = tab[i + 1];
-//         tab[i + 1] = tmp;
-//         i = -1;
-//     }
-//     i++;
-//     return tab[0];
-// }
 
 int max(int *tab, unsigned int len)
 {

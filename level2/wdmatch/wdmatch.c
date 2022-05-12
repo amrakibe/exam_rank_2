@@ -6,34 +6,56 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:39:57 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/12 19:46:10 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/12 20:14:27 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
+#include<string.h>
+#include<stdio.h>
 
-int chek_exist(char c, char *str)
+void ft_putstr(char *str)
 {
     int i = 0;
     while(str[i])
     {
-        if(str[i] == c)
-            return(1);
+        write(1,&str[i],1);
         i++;
     }
-    return(0);
+}
+int ft_strlen(char *str)
+{
+    int i = 0;
+    while(str[i])
+    {
+        i++;
+    }
+    return i;
 }
 
 int main(int ac, char **av)
 {
     int i = 0;
+    int j =0;
+    int s = 0;
     if(ac == 3)
     {
         while(av[1][i])
         {
-            if(chek_exist(av[1], av[2][i]))
+            while(av[2][j])
+            {
+                if(av[1][i] == av[2][j])
+                {
+                    s++;
+                    i++;
+                }
+                j++;
+            }
             i++;
-            write(1,&av[1][i],1); 
         }
+        if(ft_strlen(av[1]) == s)
+            ft_putstr(av[1]);
+        
     }
+    write(1,"\n",1);
 }
