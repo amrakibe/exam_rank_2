@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 15:01:32 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/12 18:04:58 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:05:32 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int max(int *tab, unsigned int len)
 
 int main()
 {
-    int arr[4] = {12};
+    int arr[4] = {12,6,8,32,5};
     printf("%d", max(arr, 4));
 }
