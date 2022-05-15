@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 20:06:13 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/13 21:06:14 by amrakibe         ###   ########.fr       */
+/*   Created: 2022/05/13 14:28:03 by amrakibe          #+#    #+#             */
+/*   Updated: 2022/05/13 14:37:36 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include<stdlib.h>
 
-int ft_atoi(const char *str)
+void	sort_int_tab(int *tab, unsigned int size)
 {
-	int i = 0;
-	int sign = 1;
-	int res = 0;
-	
-	while(str[i] <= 32)
-	i++;
-	if(str[i] == '-')
+	unsigned int i;
+	int tmp;
+
+	i = 0;
+	while (i < size)
 	{
-		sign = -1;
+		if (tab[i] > tab[i + 1])
+		{
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			i = -1;
+		}
 		i++;
 	}
-	else if(str[i] == '+')
-	i++;
-	while(str[i] <= '9' && str[i] >= '0')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return(res * sign);
 }
 int main()
 {
-	printf("%d\n", ft_atoi("12"));
-	printf("%d\n", atoi("12"));
 }

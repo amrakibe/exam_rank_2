@@ -1,42 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   inter2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 20:06:13 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/13 21:06:14 by amrakibe         ###   ########.fr       */
+/*   Created: 2022/05/15 09:19:12 by amrakibe          #+#    #+#             */
+/*   Updated: 2022/05/15 09:59:43 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<unistd.h>
 #include<stdio.h>
-#include<stdlib.h>
 
-int ft_atoi(const char *str)
+int chek_double(char *str, int size)
 {
 	int i = 0;
-	int sign = 1;
-	int res = 0;
-	
-	while(str[i] <= 32)
-	i++;
-	if(str[i] == '-')
+	while(i < size)
 	{
-		sign = -1;
+		if(str[i] == str[size])
+			return(1);
 		i++;
 	}
-	else if(str[i] == '+')
-	i++;
-	while(str[i] <= '9' && str[i] >= '0')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return(res * sign);
+	return(0);
 }
-int main()
+
+int chek_exist(char c, char *str)
 {
-	printf("%d\n", ft_atoi("12"));
-	printf("%d\n", atoi("12"));
+	int i = 0;
+	while(str[i])
+	{
+		if(str[i] == c)
+			return(1);
+		i++;
+	}
+	return(0);
+}
+
+int main(int ac, char **av)
+{
+	int i = 0;
+
+	if(ac == 3)
+	{
+		while(av[1][i])
+		{
+			if(chek_exist(av[1][i], av[2]) && !chek_double(av[1], i))
+			{
+				write(1, &av[1][i], 1);
+			}
+			i++;
+		}
+	}
+	write(1, "\n", 1);
 }

@@ -6,38 +6,35 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 22:29:11 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/09 17:18:12 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/15 11:15:18 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
+#include<string.h>
 
 char	ft_strcspn(const char *s, const char *reject)
 {
-	int i;
-	int j;
+	int i = 0;
 
-	i = 0;
 	while(s[i])
 	{
-		j = 0;
+		int j = 0;
 		while(reject[j])
 		{
 			if(s[i] == reject[j])
-			return i;
+			return(i);
 			j++;
 		}
 		i++;
 	}
-	while(s[i])
-	{
+	i = 0;
+	while(s[i]) 
 		i++;
-	}
 	return(i);
 }
 int main()
 {
-	printf("%ld\n", ft_strcspn("amrakibe", "k"));
-	printf("%ld", strcspn("amrakibe", "k"));
-	
+	printf("%hhd\n", ft_strcspn("amine", "i"));
+	printf("%hhd", strcspn("amine", "i"));
 }

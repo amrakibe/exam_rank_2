@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:39:42 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/12 14:57:59 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/15 11:46:32 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int main(int ac, char **av)
 {
     int i = 0;
-  char *s1 = av[1];
+    char *s1 = av[1];
+    
     if (ac == 2)
     {
         while (s1[i] != '\0')
@@ -27,7 +28,7 @@ int main(int ac, char **av)
         {
             i--;
         }
-        
+
         while(i > 0 && (s1[i] != ' ' && s1[i] != '\t'))
         {
             i--;
