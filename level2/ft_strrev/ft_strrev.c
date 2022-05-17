@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:43:29 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/09 22:30:37 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/17 20:43:23 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,30 @@ int ft_strlen(char *str)
 {
     int i = 0;
     while(str[i])
-    i++;
+        i++;
     return(i);
 }
 
 char    *ft_strrev(char *str)
 {
-    int  i = 0;
-    int len = ft_strlen(str);
+    int len;
+    int i;
+    char tmp;
 
+    i = 0;
+    len = ft_strlen(str) - 1;
     while(i < len)
     {
-        len--;
-        char tmp = str[i];
+        tmp = str[i];
         str[i] = str[len];
         str[len] = tmp;
         i++;
+        len--;
     }
     return(str);
 }
 int main() 
-{ 
-    char *str = "amine";
+{
+    char str[] = "rakibe amine";
     printf("%s\n", ft_strrev(str));
 }
