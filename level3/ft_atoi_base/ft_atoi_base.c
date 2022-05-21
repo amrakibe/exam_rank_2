@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:31:08 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/15 12:22:50 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:11:14 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi_base(const char *str, int str_base)
     }
     return(res * sign);
 }
-int main() 
+int main()
 {
     printf("%d\n",ft_atoi_base("-a", 16));
 }

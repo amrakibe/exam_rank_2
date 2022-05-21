@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 22:34:08 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/10 20:32:04 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:44:03 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int chek_double(char *str, int size)
     return(0);
 }
 
+
 int chek_exist(char c, char *str)
 {
     int i = 0;
@@ -36,7 +37,6 @@ int chek_exist(char c, char *str)
     }
     return(0);
 }
-
 int main(int ac, char **av)
 {
     if(ac == 3)
