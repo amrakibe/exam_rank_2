@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:15:01 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/22 18:30:45 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/22 19:34:35 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 #include <unistd.h>
 #include <string.h>
 
-
+int ft_strlen(char *str) 
+{
+    int i = 0;
+    while(str[i])
+    {
+        i++;
+    }
+    return(i);
+}
 void print_unitl_space(char *str)
 {
     int i = 0;
@@ -29,8 +37,11 @@ int main(int ac, char **av)
 {
     if(ac == 2)
     {
-        char *str = av[1];
-        int len = strlen(str) -1;
+        char	*str;
+        int		len;
+
+        str = av[1];
+        len = ft_strlen(str) -1;
         while(len >= 0)
         {
             if (str[len] == ' ' || str[len] == '\t' || len == 0)
@@ -40,7 +51,7 @@ int main(int ac, char **av)
                     write(1, " ", 1);
             }
             len--;
-        }    
+        }
     }
     write(1, "\n", 1);
 }
