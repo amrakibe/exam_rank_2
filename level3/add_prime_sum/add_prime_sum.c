@@ -23,7 +23,7 @@ int ft_atoi(const char *str)
     i++;
     while(str[i] >= '0' && str[i] <= '9')
     {
-        res = res * 10 + str[i] -48;
+        res = res * 10 + str[i] - 48;
         i++;
     }
     return(sign * res);
@@ -56,7 +56,7 @@ int		ft_is_prime(int nb)
 
 int main()
 {
-    printf("%d\n", ft_is_prime(1));
+    printf("%d\n", ft_is_prime(6));
     printf("%d\n", ft_atoi("99"));
     printf("%d", atoi("99"));
 }

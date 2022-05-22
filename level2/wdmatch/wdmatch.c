@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:39:57 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/13 20:30:12 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:54:30 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int main(int ac, char **av)
         }
         if(ft_strlen(av[1]) == s)
             ft_putstr(av[1]);
-        
     }
     write(1,"\n",1);
 }

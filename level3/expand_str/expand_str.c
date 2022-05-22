@@ -1,24 +1,4 @@
 #include<unistd.h>
-#include<string.h>
-
-// int main(int ac, char **av)
-// {
-//     int i = 0;
-//     int len = strlen(av[1]) - 1;
-    
-//     if(ac == 2)
-//     {
-//         while(av[1][i] == ' ' || av[1][i] == '\t')
-//             i++;
-//         while(av[1][len] == ' ' || av[1][len] == '\t')
-//             len--;
-//         while(i <= len)
-//         {
-//             write(1,&av[1][i],1);
-//             i++;
-//         }
-//     }
-// }
 
 int main(int ac, char **av)
 {
@@ -32,10 +12,10 @@ int main(int ac, char **av)
             if(av[1][i] == ' ' || av[1][i] == '\t')
             {
                 if(av[1][i + 1] > 32 && av[1][i + 1] != '\0')
-                    write(1,"   ", 3);
+                write(1,"   ", 3);
             }
             else if(av[1][i] != ' ' || av[1][i] != '\t')
-                    write(1, &av[1][i], 1);
+            write(1, &av[1][i], 1);
             i++;
         }
     }

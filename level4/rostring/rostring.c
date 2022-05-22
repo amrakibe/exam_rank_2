@@ -20,7 +20,6 @@ int main(int argc, char **argv)
         }
         s1[j] = '\0';
             write(1, &s1[j], 1);
-        // printf("=> %s\n", s1[j]);
         j = 0; 
         
         while (argv[1][i])
