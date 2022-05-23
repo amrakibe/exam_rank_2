@@ -40,23 +40,43 @@ void ft_putnbr(int nb)
     ft_putchar(nb + 48);
 }
 
-int		ft_is_prime(int nb)
+int ft_is_prime(int nbr)
 {
-	int i;
-
-	i = 2;
-	while (i < nb)
-	{
-		if (nb % i == 0)
-			return (0);
-		i++;
-	}
-	return (1);
+    int i = 2;
+    while(i < nbr)
+    {
+        if(nbr % i == 0)
+            return(0);
+        i++;
+    }
+    return(1);
 }
 
-int main()
+int		ft_add_prime_sum(int nb)
 {
-    printf("%d\n", ft_is_prime(6));
-    printf("%d\n", ft_atoi("99"));
-    printf("%d", atoi("99"));
+	int i;
+	int prime_sum;
+
+	i = 2;
+	prime_sum = 0;
+	if (nb <= 0)
+		return (0);
+	while (i <= nb)
+	{
+		if (ft_is_prime(i))
+			prime_sum += i;
+		i++;
+	}
+	return (prime_sum);
+}
+
+int main(int ac , char **av)
+{
+    if(ac == 2)
+    {
+        ft_putnbr(ft_add_prime_sum(ft_atoi(av[1])));
+    }
+    else 
+    write(1, "0", 1);
+    write(1,"\n",1);
 }
