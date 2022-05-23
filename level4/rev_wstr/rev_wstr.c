@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:15:01 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/22 19:34:35 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:20:45 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int ft_strlen(char *str)
     }
     return(i);
 }
+
 void print_unitl_space(char *str)
 {
     int i = 0;
@@ -41,7 +42,7 @@ int main(int ac, char **av)
         int		len;
 
         str = av[1];
-        len = ft_strlen(str) -1;
+        len = ft_strlen(str) - 1;
         while(len >= 0)
         {
             if (str[len] == ' ' || str[len] == '\t' || len == 0)
