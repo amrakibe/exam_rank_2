@@ -76,7 +76,7 @@ int main(int ac , char **av)
     {
         ft_putnbr(ft_add_prime_sum(ft_atoi(av[1])));
     }
-    else 
+    else
     write(1, "0", 1);
-    write(1,"\n",1);
+    write(1, "\n", 1);
 }

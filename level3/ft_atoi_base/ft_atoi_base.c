@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:31:08 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/20 19:11:14 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/24 09:53:25 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_atoi_base(const char *str, int str_base)
     int i = 0;
     int sign = 1;
     int res;
+
     if(str[i] == '-')
     {
         sign = -1;
@@ -26,7 +27,7 @@ int	ft_atoi_base(const char *str, int str_base)
     while(str[i])
     {
         res *= str_base;
-        if(str[i] > '0' && str[i] <= '9')
+        if(str[i] >= '0' && str[i] <= '9')
             res += str[i] - 48;
         if(str[i] >= 'a' && str[i] <= 'z')
             res += str[i] - 87;
