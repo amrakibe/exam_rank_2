@@ -41,7 +41,7 @@ t_list *sort_list(t_list *head, int (*cmp)(int, int))
 	int swap;
 
 	if (!head)
-		return (hezzad);
+		return (head);
 
 	while (head->next != NULL)
 	{
