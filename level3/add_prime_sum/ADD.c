@@ -16,6 +16,7 @@ void ft_putnbr(int nb)
     else
     ft_putchar(nb + 48);
 }
+
 int ft_atoi(char *str)
 {
     int i = 0;
@@ -38,38 +39,42 @@ int ft_atoi(char *str)
     }
     return(res * sign);
 }
+
 int is_prime(int nb)
 {
     int i = 2;
-    while(i < nb)
+
+    while(i <= nb)
     {
         if(nb % i == 0)
-        return(0);
+            return(0);
         i++;
     }
     return(1);
 }
 
-int add_prime_sum(int nb)
+int ft_add_prime_sum(int nb) 
 {
-	int i = 2;
-	int res = 0;
-	if(nb <= 0)
-		return(0);
-	while(nb >= i)
-	{
-		if(is_prime(i))
-			res += i;
-		i++;
-	}
-	return(res);
+    int i = 2;
+    int prime_sum = 0;
+    
+    if(nb <= 0)
+        return(0);
+
+    while(i <= nb)
+    {
+        if(is_prime(i))
+            prime_sum += i;
+        i++;
+    }
+    return(prime_sum);
 }
 
 int main(int ac, char **av)
 {
     if(ac == 2)
     {
-        ft_putnbr(add_prime_sum(ft_atoi(av[1])));
+        ft_putnbr(ft_add_prime_sum(ft_atoi(av[1])));
     }
 	else
     write(1,"0",1);

@@ -6,13 +6,23 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:21:37 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/09 17:42:30 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:12:54 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 #include<string.h>
 #include<stdio.h>
+
+int ft_strlen(char *str)
+{
+    int i = 0;
+    while (str[i])
+    {
+        i++;
+    }
+    return(i);
+}
 
 char *ft_strdup(char *src)
 {
@@ -21,7 +31,7 @@ char *ft_strdup(char *src)
     
     i = 0;
     j = 0;
-    buf = malloc(sizeof(char *));
+    buf = malloc(sizeof(char) * ft_strlen(src));
     if(!buf)
         return(NULL); 
     while(src[i] != '\0')

@@ -6,46 +6,34 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 18:49:44 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/21 19:40:52 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:44:47 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int		ft_abs(int x)
+int			*ft_rrange(int start, int end)
 {
-	if (x < 0)
-		return (-x);
-	return (x);
-}
+	int			*range;
+	int			i;
 
-int		*ft_rrange(int start, int end)
-{
-	int i;
-	int *tab;
-
+	if (start > end)
+		range = (int*)malloc(sizeof(int) * (end - start));
+	else
+		range = (int*)malloc(sizeof(int) * (end - start + 1));
 	i = 0;
-	tab = (int*)malloc(sizeof(int) * ft_abs(end - start) + 1);
-	while (end > start)
+	while (end != start)
 	{
-		tab[i] = end;
-		end--;
-		i++;
+		range[i++] = end;
+		end += (end > start) ? -1 : 1;
 	}
-	tab[i] = end;
-	while (end < start)
-	{
-		tab[i] = end;
-		end++;
-		i++;
-	}
-	tab[i] = end;
-	return (tab);
+	range[i] = end;
+	return (range);
 }
 int main()
 {
-    int *r = ft_rrange(3,1);
+    int *r = ft_rrange(-1,2);
     int i = 0;
     while(r[i])
     {
