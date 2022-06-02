@@ -17,6 +17,8 @@ int max(int* tab, unsigned int len)
     int max = 0;
     unsigned int i = 0;
     
+    if(!len)
+        return(0);
     max = tab[0];
     while (i < len)
     {
@@ -29,6 +31,6 @@ int max(int* tab, unsigned int len)
 
 int main()
 {
-    int arr[7] = {29,6,8,32};
-    printf("%d", max(arr, 4));
+    int arr[7] = {99,7,5,3};
+    printf("%d", max(arr, 0));
 }

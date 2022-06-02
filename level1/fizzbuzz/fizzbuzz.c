@@ -12,12 +12,26 @@
 
 #include<unistd.h>
 
+// void fizzbuzz(int number)
+// {
+// 	char buf[10] = "0123456789";
+// 	if(number > 9)
+// 	fizzbuzz(number / 10);
+// 	write(1,&buf[number % 10], 1);
+// }
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 void fizzbuzz(int number)
 {
-	char buf[10] = "0123456789";
 	if(number > 9)
-	fizzbuzz(number / 10);
-	write(1,&buf[number % 10], 1);
+	{
+		fizzbuzz(number / 10);
+		fizzbuzz(number % 10);
+	}
+	ft_putchar(number + 48);
 }
 int main()
 {

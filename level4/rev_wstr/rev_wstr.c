@@ -14,14 +14,14 @@
 #include <unistd.h>
 #include <string.h>
 
-int ft_strlen(char *str) 
+int ft_strlen(char *str)
 {
     int i = 0;
-    while(str[i])
+    while (str[i])
     {
         i++;
     }
-    return(i);
+    return (i);
 }
 
 void print_unitl_space(char *str)
@@ -29,21 +29,21 @@ void print_unitl_space(char *str)
     int i = 0;
     while (str[i] && str[i] != ' ' && str[i] != '\t')
     {
-        write(1, str + i, 1);
+        write(1, &str[i], 1);
         i++;
     }
 }
 
 int main(int ac, char **av)
 {
-    if(ac == 2)
+    if (ac == 2)
     {
-        char	*str;
-        int		len;
+        char *str;
+        int len;
 
         str = av[1];
         len = ft_strlen(str) - 1;
-        while(len >= 0)
+        while (len >= 0)
         {
             if (str[len] == ' ' || str[len] == '\t' || len == 0)
             {

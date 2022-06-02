@@ -1,10 +1,10 @@
-#ifndef __LIST_H__
-#define __LIST_H__
+#ifndef _LIST_H_
+#define _LIST_H_
 
 typedef struct s_list
 {
 	int data;
 	struct s_list *next;
-}	t_list;;
+}	t_list;
 
 #endif

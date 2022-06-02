@@ -6,37 +6,51 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 18:49:44 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/24 10:44:47 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/06/01 11:47:12 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
+int ft_abs(int x)
+{
+	if(x < 0)
+		return(-x);
+	return(x);
+}
+
 int			*ft_rrange(int start, int end)
 {
-	int			*range;
-	int			i;
+	int i = 0;
+	int *arr;
 
-	if (start > end)
-		range = (int*)malloc(sizeof(int) * (end - start));
-	else
-		range = (int*)malloc(sizeof(int) * (end - start + 1));
-	i = 0;
-	while (end != start)
+	arr = (int*)malloc(sizeof(int) * ft_abs(end - start) + 1);
+	while(end > start)
 	{
-		range[i++] = end;
-		end += (end > start) ? -1 : 1;
+		arr[i] = end;
+		end--;
+		i++;
 	}
-	range[i] = end;
-	return (range);
+	arr[i] = end;
+	while(end < start)
+	{
+		arr[i] = end;
+		end++;
+		i++;
+	}
+	arr[i] = end;
+	return(arr);
 }
 int main()
 {
-    int *r = ft_rrange(-1,2);
-    int i = 0;
-    while(r[i])
-    {
-		printf("%d", r[i++]);
-    }
+	int i= 0;
+	int s = 0;
+	int e = -3;
+	int *arr = ft_rrange(s, e);
+	while(i < 4)
+	{
+		printf("%d ", arr[i]);
+		i++;
+	}
 }

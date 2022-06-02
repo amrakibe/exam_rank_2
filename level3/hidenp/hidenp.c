@@ -10,32 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<string.h>
+#include <unistd.h>
 
 int ft_strlen(char *str)
 {
 	int i = 0;
-	while(str[i] != '\0')
+	while (str[i])
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 int main(int ac, char **av)
 {
 	int i = 0;
+	int res = 0;
 	int j = 0;
-	unsigned long res = 0;
-
-	if(ac == 3)
+	if (ac == 3)
 	{
-		while(av[1][i])
+		while (av[1][i])
 		{
-			while(av[2][j])
+			while (av[2][j])
 			{
-				if(av[1][i] == av[2][j])
+				if (av[1][i] == av[2][j])
 				{
 					res++;
 					i++;
@@ -44,10 +42,9 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
-		if(res == ft_strlen(av[1]))
-			write(1,"1",1);
+		if (ft_strlen(av[1]) == res)
+			write(1, "1", 1);
 		else
 			write(1, "0", 1);
 	}
-	write(1, "\n", 1);
 }
