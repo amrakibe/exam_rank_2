@@ -6,7 +6,7 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 10:02:50 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/06/07 09:09:29 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:14:33 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int main(int ac , char **av)
 	int i = 0;
 	int status = 1;
 	int j = 1;
-	if (ac == 1)
+	
+    if (ac == 1)
 		write(1, "\n", 1);
 	while(j < ac)
 	{

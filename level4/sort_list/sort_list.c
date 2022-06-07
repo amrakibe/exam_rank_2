@@ -32,27 +32,27 @@ void push_back(t_list **head_ref, int data)
 	last->next = node;
 }
 
-t_list *sort_list(t_list *head, int (*cmp)(int, int))
+t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
-	t_list *save = head;
+	t_list *save = lst;
 	int swap;
 
-	if (!head)
-		return (head);
-
-	while (head->next != NULL)
+	if(!lst)
+		return (lst);
+	while(lst->next != NULL)
 	{
-		if (cmp(head->data, head->next->data) == 0)
+		if(cmp(lst->data, lst->next->data) == 0)
 		{
-			swap = head->data;
-			head->data = head->next->data;
-			head->next->data = swap;
-			head = save;
+			swap = lst->data;
+			lst->data = lst->next->data;
+			lst->next->data = swap;
+			lst = save;
 		}
 		else
-			head = head->next;
+			lst = lst->next;
 	}
-	return (save);
+	return(save);
+	
 }
 
 int asc(int a, int b)
