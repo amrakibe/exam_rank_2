@@ -6,40 +6,46 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 10:02:50 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/06/07 09:14:33 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:46:00 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac , char **av)
+int	main(int ac, char **av)
 {
-	int i = 0;
-	int status = 1;
-	int j = 1;
-	
-    if (ac == 1)
+	int i = 1;
+	int j;
+	if (ac == 1)
 		write(1, "\n", 1);
-	while(j < ac)
+	else
 	{
-		i = 0;
-		while (av[j][i])
+		while (av[i])
 		{
-			char c = av[j][i];
-			if(av[j][i + 1] == ' ' || av[j][i + 1] == '\0' || av[j][i + 1] == '\t')
+			j = 0;
+			while (av[i][j])
 			{
-           		if(c >= 'a' && c <= 'z')
-				   c -= 32;
+				if (av[i][j] >= 'A' && av[i][j] <= 'Z')
+					av[i][j] += 32;
+				j++;
 			}
-			else
-			{
-				if(c >= 'A' && c <= 'Z')
-					c += 32;
-			}
-			write(1, &c, 1);
 			i++;
 		}
-		write(1, "\n", 1);
-		j++;
+		i = 1;
+		while (av[i])
+		{
+			j = 0;
+			while (av[i][j])
+			{
+				if (j == 0 && (av[i][j] < 'A' || av[i][j] > 'Z'))
+					av[i][j] -= 32;
+				if (av[i][j] == ' ' || av[i][j] == '\t')
+					av[i][j + 1] -= 32;
+				write(1, &av[i][j], 1);
+				j++;
+			}
+			write(1, "\n", 1);
+			i++;
+		}
 	}
 }
