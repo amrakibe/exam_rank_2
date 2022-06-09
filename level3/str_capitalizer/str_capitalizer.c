@@ -6,46 +6,49 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 10:02:50 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/06/07 20:46:00 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:27:14 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int i = 1;
-	int j;
+	int i;
+	int status;
+	int j = 1;
 	if (ac == 1)
 		write(1, "\n", 1);
 	else
 	{
-		while (av[i])
+		while (j < ac)
 		{
-			j = 0;
-			while (av[i][j])
+			char *s = av[j];
+			i = 0;
+			status = 1;
+			while (s[i])
 			{
-				if (av[i][j] >= 'A' && av[i][j] <= 'Z')
-					av[i][j] += 32;
-				j++;
-			}
-			i++;
-		}
-		i = 1;
-		while (av[i])
-		{
-			j = 0;
-			while (av[i][j])
-			{
-				if (j == 0 && (av[i][j] < 'A' || av[i][j] > 'Z'))
-					av[i][j] -= 32;
-				if (av[i][j] == ' ' || av[i][j] == '\t')
-					av[i][j + 1] -= 32;
-				write(1, &av[i][j], 1);
-				j++;
+				char c = s[i];
+				if (status == 1 && (c >= 'a' && c <= 'z'))
+				{
+					c -= 32;
+					status = 0;
+				}
+				else if (status == 0 && (c >= 'A' && c <= 'Z'))
+				{
+					c += 32;
+				}
+				else if (status == 0 && (c == ' ' || c == '\t'))
+					status = 1;
+				else if (status == 1 && (c >= 'A' && c <= 'Z'))
+				{
+					status = 0;
+				}
+				write(1, &c, 1);
+				i++;
 			}
 			write(1, "\n", 1);
-			i++;
+			j++;
 		}
 	}
 }
