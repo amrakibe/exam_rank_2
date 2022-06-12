@@ -1,4 +1,4 @@
-s
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -26,6 +26,7 @@ void sort_int_tab(int *tab, unsigned int size)
 			tmp = tab[i];
 			tab[i] = tab[i + 1];
 			tab[i + 1] = tmp;
+            printf("new_index_is:%d\n", i);
 			i = -1;
 		}
 		i++;
@@ -36,10 +37,10 @@ int main(void)
     int tab[10];
     int i = 0;
 
-    tab[0] = 9;
+    tab[0] = 5;
     tab[1] = 2;
     tab[2] = 4;
-    tab[3] = 3;
+    tab[3] = 9;
     tab[4] = 8;
     tab[5] = 0;
     tab[6] = 1;
