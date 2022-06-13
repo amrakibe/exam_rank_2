@@ -6,52 +6,52 @@
 /*   By: amrakibe <amrakibe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 22:34:08 by amrakibe          #+#    #+#             */
-/*   Updated: 2022/05/25 19:36:08 by amrakibe         ###   ########.fr       */
+/*   Updated: 2022/06/13 12:12:53 by amrakibe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#include <unistd.h>
+#include <stdio.h>
 
 int chek_double(char *str, int size)
 {
     int i = 0;
-    while(i < size)
+    while (i < size)
     {
-        if(str[i] == str[size])
+        if (str[i] == str[size])
             return 1;
         i++;
     }
-    return(0);
+    return (0);
 }
 
 int chek_exist(char c, char *str)
 {
     int i = 0;
-    while(str[i])
+    while (str[i])
     {
-        if(str[i] == c)
-        return(1);
+        if (str[i] == c)
+            return (1);
         i++;
     }
-    return(0);
+    return (0);
 }
 int main(int ac, char **av)
 {
-    if(ac == 3)
+    if (ac == 3)
     {
         char *str1 = av[1];
         char *str2 = av[2];
 
         int i = 0;
-        while(str1[i])
+        while (str1[i])
         {
-            if(chek_exist(str1[i], str2) && !chek_double(str1, i))
+            if (chek_exist(str1[i], str2) && !chek_double(str1, i))
             {
-                write(1 ,&str1[i], 1);
+                write(1, &str1[i], 1);
             }
-                i++;
+            i++;
         }
     }
-    write(1,"\n",1);
+    write(1, "\n", 1);
 }
