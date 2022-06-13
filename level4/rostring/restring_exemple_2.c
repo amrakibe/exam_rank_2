@@ -64,7 +64,7 @@ int main(int ac, char **av)
         while (tab[i])
         {
             ft_putstr(tab[i]);
-            ft_putstr(".");
+            ft_putstr(" ");
             i++;
         }
         ft_putstr(tab[0]);
