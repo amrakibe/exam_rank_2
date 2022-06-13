@@ -26,7 +26,6 @@ void sort_int_tab(int *tab, unsigned int size)
 			tmp = tab[i];
 			tab[i] = tab[i + 1];
 			tab[i + 1] = tmp;
-            printf("new_index_is:%d\n", i);
 			i = -1;
 		}
 		i++;
